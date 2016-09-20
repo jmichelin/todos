@@ -1,5 +1,5 @@
-let nextTodoId = 0;
-export const addTodo = (text) => {
+let nextTodoId = 0; //set default todoId
+export const addTodo = (text) => { //see reducers/todos.js line 3
   return {
     type: 'ADD_TODO',
     id: (nextTodoId++).toString(),

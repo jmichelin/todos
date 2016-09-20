@@ -13,11 +13,11 @@ const AddTodo = ({ dispatch }) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(addTodo(input.value));
+          dispatch(addTodo(input.value)); //see line 2 actions/index.js
           input.value = '';
         }}
       >
-        <input ref={node => { input = node; }} />
+        <input ref={node => { input = node; }} /> /* current DOM node */
         <button type="submit">
           Add Todo
         </button>
@@ -30,4 +30,4 @@ AddTodo.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(AddTodo);
+export default connect()(AddTodo); //connect to store

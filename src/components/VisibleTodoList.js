@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 import TodoList from './TodoList';
 
-const getVisibleTodos = (todos, filter) => {
+const getVisibleTodos = (todos, filter) => { //lets the component handle what types of todos are visible
   switch (filter) {
     case 'SHOW_ALL':
       return todos;
@@ -17,14 +17,14 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = (state) => {
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter),
+    todos: getVisibleTodos(state.todos, state.visibilityFilter), //gets the state of the todos
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onTodoClick: (id) => {
-      dispatch(toggleTodo(id));
+      dispatch(toggleTodo(id)); //lets the actions know which of the todos you are dealing with see actions/index.js line 17
     },
   };
 };
